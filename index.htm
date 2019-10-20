@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<body >
+
+
+    <form action="first.html" method="GET">
+        <div class="form-group col-md-3">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="Name" id="Name" aria-describedby="Name"
+                placeholder="Enter name">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="col-md-3">
+            Address
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="form-group col-md-3">
+                <label for="Address1">House No</label>
+                <input type="text" class="form-control" name="Address1" id="Address1" placeholder="House No">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="form-group col-md-3">
+                <label for="Address2">Locality</label>
+                <input type="text" class="form-control" id="Address2" name="Address2" placeholder="Locality">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <select class="custom-select col-md-2 form-control" id="sel1" name="city">
+                <option selected>City</option> 
+                <option value="0">Delhi</option>
+                <option value="1">Bengaluru</option>
+                <option value="2">Mumbai</option>
+                <option value="3">Kokalata</option>
+                <option value="4">Hyderabad</option>
+                <option value="5">Kanpur</option>
+                <option value="6">Ahmedabad</option>
+                <option value="7">Jaipur</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="Peoples">No of People in House</label>
+            <input type="number" class="form-control" id="Peoples" name="Peoples" placeholder="No of People in House">
+        </div>
+        <div id="addmsg">
+        </div>
+        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#Peoples").on('change', function () {
+            var num = this.value;
+            if (Math.floor(num) == num && $.isNumeric(num)) {
+                $("#addmsg").text('');
+                for (var i = 0; i < num; i++) {
+                    var a = "<div class='row'><div class='col-md-1'></div><div class='form-group col-md-3'><label for='Person" + i + "'>Age of Person " + (i + 1) + "</label><input type='number' class='form-control' id='Person" + i + "' name='Person" + i + "' placeholder='Age of Person " + (i + 1) + "'></div>";
+                    var b = '<div class="col-md-6"><div class="row">Gender</div><div class="row"><br></div><div class="row">';
+                    var c = '<div class="form-check col-md-2"><input class="form-check-input" type="radio" name="Gender' + i + '" id="Gender1" value="male"><label class="form-check-label" for="Gender1">Male</label></div>';
+                    var d = '<div class="form-check col-md-2"><input class="form-check-input" type="radio" name="Gender' + i + '" id="Gender2" value="female"><label class="form-check-label" for="Gender2">Female</label></div></div>';
+                    $("#addmsg").append(a + b + c + d);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
