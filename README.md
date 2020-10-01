@@ -1,4 +1,4 @@
-# hydrosaviours
+# Hydrosaviours
 About the project:
 Water as a resource is critical to our very survival. The importance of water cannot be overstated and we are recklessly wasting our precious resource. We are getting more 
 amount of water in our houses than we need and without thinking we are  wasting  it. With the increasing scarcity of usable water, it is sincerely needed to make sure that the 
